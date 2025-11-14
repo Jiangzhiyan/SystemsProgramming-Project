@@ -1,0 +1,31 @@
+Prime Checker Server Compliance Statement
+
+Project: Prime Checker Server
+Development Team: [Zhiyan Jiang Yaocong Fang]
+
+
+COMPLIANCE LEVEL: 5 (FULL COMPLIANCE)
+
+Verified Requirements:
+
+✓ Requirement 1 - UNIX SOCK_STREAM sockets with correct address (/tmp/optimus_prime)
+✓ Requirement 2 - Multi-process concurrent server (fork per client)
+✓ Requirement 3 - Multi-threaded processing (4 checking threads + 1 sorting thread per client)
+✓ Requirement 4 - Correct request format (two long int: index and number)
+✓ Requirement 5 - Correct reply format (two long int: index and result)  
+✓ Requirement 6 - In-order reply delivery via pipe and sorting thread
+✓ Requirement 7 - Progress reporting with PID, thread index, request details, and prime totals
+✓ Requirement 8 - Proper wrap-up procedure with thread joining, resource cleanup, and final reporting
+
+Additional Features Verified:
+- Proper file descriptor management (closing unused descriptors)
+- Atomic request reading using MSG_WAITALL
+- Thread-safe prime counter with mutex protection
+- Out-of-order reply buffering and in-order delivery
+- Signal handling (SIGCHLD, SIGPIPE)
+- Clean resource management and error handling
+- Comprehensive logging at each wrap-up step
+
+The server successfully passes all 8 requirements and implements all development notes as specified in the project documentation.
+
+Compliance Level: 5/5
